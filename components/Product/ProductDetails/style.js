@@ -1,0 +1,118 @@
+const styles = {
+  pageHeader: {
+    backgroundColor: '#fce38a',
+    width: 412,
+    height: 60,
+    flexDirection: 'row',
+  },
+  container: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
+    margin: 15,
+  },
+  bookCover: {
+    flex: 1,
+    width: 400,
+    height: 200,
+    resizeMode: 'center',
+    marginTop: 20,
+  },
+  bookInformation: {
+    fontFamily: 'monospace',
+    textAlign: 'center',
+    lineHeight: 40,
+    fontWeight: 'bold',
+    fontSize: 17,
+  },
+  btnBuy: {
+    width: '90%',
+    marginLeft: 20,
+    margin: 10,
+  },
+  btnCart: {
+    width: '90%',
+    marginLeft: 20,
+    margin: 10,
+  },
+  benefit: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  benefitInfo: {
+    flex: 1,
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    textAlign: 'center',
+    padding: 10,
+    fontFamily: 'monospace',
+  },
+  header: {
+    flex: 1,
+    marginLeft: 20,
+    fontSize: 17,
+    marginBottom: 5,
+    fontFamily: 'monospace',
+  },
+  productInfoContainer: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  productInfoHeader: {
+    flex: 1,
+    marginLeft: 20,
+    marginBottom: 5,
+    marginTop: 5,
+    fontFamily: 'monospace',
+  },
+  productInfo: {
+    flex: 1,
+    marginRight: 20,
+    color: 'blue',
+    marginTop: 5,
+    marginBottom: 5,
+    fontFamily: 'monospace',
+  },
+  goBackIcon: {
+    marginLeft: 10,
+    marginTop: 15,
+  },
+  favoriteIcon0: {
+    color: 'black',
+    bottom: 48,
+    left: 20,
+  },
+  favoriteIcon1: {
+    color: 'red',
+    bottom: 48,
+    left: 20,
+  },
+  commentSection: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#fce38a',
+    padding: 10,
+    margin: 15,
+    borderRadius: 10,
+  },
+  commentText: {
+    position: 'relative',
+    margin: 15,
+    padding: 15,
+    fontFamily: 'monospace',
+  },
+  commentButton: {
+    width: '15%',
+    left: 300,
+    marginBottom: 15,
+  },
+  commentDate: {},
+};
+export default styles;
