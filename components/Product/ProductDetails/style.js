@@ -1,4 +1,7 @@
 const styles = {
+  headerContainer: {
+    position: 'relative',
+  },
   pageHeader: {
     backgroundColor: '#fce38a',
     width: 412,
@@ -38,6 +41,7 @@ const styles = {
     margin: 10,
   },
   btnCart: {
+    position: 'relative',
     width: '90%',
     marginLeft: 20,
     margin: 10,
@@ -82,17 +86,16 @@ const styles = {
   },
   goBackIcon: {
     marginLeft: 10,
-    marginTop: 15,
+    marginTop: 20,
+    position: 'relative',
   },
   favoriteIcon0: {
     color: 'black',
-    bottom: 48,
-    left: 20,
+    position: 'relative',
   },
   favoriteIcon1: {
     color: 'red',
-    bottom: 48,
-    left: 20,
+    position: 'relative',
   },
   commentSection: {
     flex: 1,

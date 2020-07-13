@@ -2,7 +2,14 @@
 /* eslint-disable no-new-object */
 //import components
 import React, {Component} from 'react';
-import {Text, View, FlatList, Image, Button} from 'react-native';
+import {
+  Text,
+  View,
+  FlatList,
+  Image,
+  Button,
+  TouchableOpacity,
+} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -54,6 +61,17 @@ function CartPage() {
             <View style={Styles.ViewText}>
               <Text style={Styles.nameBook}> Tên sách: {item.nameBook}</Text>
               <Text style={Styles.priceBook}> Giá: {item.price}.000đ</Text>
+            </View>
+            <View style={{marginTop: 5, left: 70}}>
+              <TouchableOpacity
+              // onclick={() => {
+              //   Firebase.database()
+              //     .ref('Cart/' + userId + '/' + item.idBook)
+              //     .remove();
+              // }}
+              >
+                <Icon name="clear" size={35} color="red" />
+              </TouchableOpacity>
             </View>
           </View>
         )}

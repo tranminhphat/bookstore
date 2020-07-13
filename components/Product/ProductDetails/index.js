@@ -175,18 +175,16 @@ function sendComment(idBook, comment) {
     if (user) {
       userId = user.uid;
       Firebase.database()
-        .ref('Comment')
+        .ref('Comment/' + idBook)
         .once('value', data => {
-          data.forEach(function(childData) {
-            x++;
-          });
+          x = data.numChildren() + 1;
         })
         .then(() => {
           Firebase.database()
-            .ref('Comment/' + x)
+            .ref('Comment/' + idBook + '/' + x)
             .set({
-              idBook: idBook,
-              idUser: userId,
+              commentId: x,
+              userId: userId,
               comment: comment,
               date: date,
             });
@@ -225,15 +223,12 @@ export default function ProductDetails({route, navigation}) {
   };
   var temp = [];
 
-  //Get comments data
+  // Get comments data
   Firebase.database()
-    .ref('Comment')
+    .ref('Comment/' + route.params?.id)
     .once('value', data => {
       data.forEach(childData => {
-        var idBook = childData.child('idBook').toJSON();
-        if (idBook === route.params?.id) {
-          temp.push(childData.val());
-        }
+        temp.push(childData.val());
       });
       setCommentData(temp);
     });
@@ -261,7 +256,7 @@ export default function ProductDetails({route, navigation}) {
               style={styles.goBackIcon}
             />
           </TouchableOpacity>
-          <View style={{marginTop: 15, left: 300}}>
+          <View style={{position: 'relative', left: 280, bottom: 37}}>
             <TouchableOpacity
               onPress={() => {
                 clickFavoriteBook(
@@ -276,8 +271,8 @@ export default function ProductDetails({route, navigation}) {
                   route.params?.supplier,
                   route.params?.translator,
                   route.params?.typeofcover,
-                ),
-                  favoriteButton ? setState(0) : setState(1);
+                );
+                favoriteButton ? setState(0) : setState(1);
               }}>
               <Icon
                 name="favorite"
@@ -288,9 +283,8 @@ export default function ProductDetails({route, navigation}) {
                 }
               />
             </TouchableOpacity>
-            <View />
           </View>
-          <View style={{bottom: 85, left: 260}}>
+          <View style={{bottom: 72, left: 330}}>
             <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
               <Icon name="local-grocery-store" size={35} color="black" />
             </TouchableOpacity>
@@ -435,7 +429,7 @@ export default function ProductDetails({route, navigation}) {
                   <Text style={{fontWeight: 'bold', fontFamily: 'monospace'}}>
                     User ID:{' '}
                   </Text>
-                  {item.idUser}
+                  {item.userId}
                 </Text>
                 <Text style={styles.commentContent}>
                   <Text style={{fontWeight: 'bold', fontFamily: 'monospace'}}>

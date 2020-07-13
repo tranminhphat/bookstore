@@ -349,21 +349,13 @@ function infomationAccount({route, navigation}) {
 
   return (
     <View>
-      {/* <View style={Styles.pageHeader}> */}
-      <View style={[Styles.headerContainer, Styles.x]}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={Styles.touchBackIcon}>
-          <Icon
-            name="keyboard-backspace"
-            size={35}
-            color="white"
-            style={Styles.goBackIcon}
-          />
-        </TouchableOpacity>
-        <Text style={Styles.headerText}>Infomation Account</Text>
-      </View>
-      {/* </View> */}
+      <LinearGradient
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 0}}
+        style={Styles.linearGradienth2}
+        colors={['#fce38a', '#EDDE5D', '#E7E9BB']}>
+        <Text style={Styles.headerText}>My Information</Text>
+      </LinearGradient>
       <View style={Styles.InforAccountGeneral}>
         <View style={[Styles.InfoAccView]}>
           <Text style={Styles.InfoAccText}>Cá nhân</Text>

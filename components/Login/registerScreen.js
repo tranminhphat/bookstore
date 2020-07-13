@@ -22,10 +22,10 @@ function DangKy(hoten, sdt, email, matKhau, ngaySinh) {
           kichHoat: 1,
         })
         .then(() => {
-          alert('inserted');
+          alert('Đăng ký tài khoản thành công!');
         })
         .catch(error => {
-          alert('false');
+          alert('Đăng ký thất bại!');
         });
     })
     .catch(() => {});
